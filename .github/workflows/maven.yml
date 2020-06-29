@@ -22,16 +22,3 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-  job_1:
-    name: Add 3 and 7
-    runs-on: ubuntu-latest
-    steps:
-      - shell: bash
-        run: |
-          expr 3 + 7 > math-homework.txt
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v1
-        with:
-          name: homework
-          path: math-homework.txt
